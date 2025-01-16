@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Missed Call Agent | AI Call Answering for Service Providers</title>
+    <title>Missed Call Agent | AI Call Answering</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -30,7 +30,7 @@
         </div>
     </section>
 
-    <!-- SIGN-UP FORM SECTION (LEFT: FORM, RIGHT: IMAGE) -->
+    <!-- SIGN-UP FORM SECTION -->
     <section class="signup-form" id="signup">
         <div class="container">
             <!-- Left Column: Form -->
@@ -52,7 +52,7 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION (LEFT: TEXT & BUTTON, IMAGE BELOW TEXT | RIGHT: MAIN IMAGE) -->
+    <!-- ABOUT SECTION -->
     <section class="about">
         <div class="container">
             <!-- Left Column: Text & Small Image -->
@@ -75,18 +75,39 @@
         <p>© 2025 Missed Call Agent. All rights reserved.<br>Your privacy is important to us. We’ll only use your information to contact you about Missed Call Agent.</p>
     </footer>
 
-   <script>
-    function scrollToForm() {
-        document.getElementById("signup").scrollIntoView({ behavior: 'smooth' });
-    }
+    <!-- FORM SUBMISSION SCRIPT -->
+    <script>
+        function scrollToForm() {
+            document.getElementById("signup").scrollIntoView({ behavior: 'smooth' });
+        }
 
-    document.getElementById("accessForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        document.getElementById("accessForm").style.display = "none";
-        document.getElementById("confirmation-message").style.display = "block"; // Show confirmation only after form submit
-    });
-</script>
+        document.getElementById("accessForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
 
+            const formData = {
+                name: document.querySelector('input[name="name"]').value,
+                email: document.querySelector('input[name="email"]').value,
+                business: document.querySelector('input[name="business"]').value
+            };
+
+            try {
+                const response = await fetch("https://script.google.com/macros/s/AKfycby_A7dtwnu0IGmdL0Cw2KyHLPqWB3eGxEq4m-3xzYKbFcMXiYD8MijzUpmIssWtvl7p6A/exec", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    document.getElementById("accessForm").style.display = "none";
+                    document.getElementById("confirmation-message").style.display = "block";
+                } else {
+                    console.error("Form submission failed.");
+                }
+            } catch (error) {
+                console.error("Error submitting form:", error);
+            }
+        });
+    </script>
 
 </body>
 </html>
