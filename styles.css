@@ -109,7 +109,14 @@ video {
     margin-top: 15px;
 }
 
-/* ABOUT SECTION - Padding Fix */
+/* Hide confirmation message by default */
+#confirmation-message {
+    display: none;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* ABOUT SECTION - Padding Fix & Image Matching */
 .about .text-column {
     text-align: left;
     display: flex;
@@ -118,12 +125,20 @@ video {
 
 .about .cta-button {
     align-self: center;
-    margin: 20px auto 40px auto; /* Increased bottom padding */
+    margin: 20px auto 40px auto; /* Ensures alignment */
 }
 
+/* Make Image 2 match Image 3 */
 .small-image {
-    width: 80%;
+    width: 100%;
+    border-radius: 10px;
     margin-top: 20px;
+}
+
+/* Align buttons in About Section */
+.about .cta-button {
+    align-self: center;
+    width: fit-content;
 }
 
 /* PRIVACY POLICY */
