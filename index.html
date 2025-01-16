@@ -42,11 +42,12 @@
                   method="POST" 
                   action="https://script.google.com/macros/s/AKfycbwfICumV-Q3h2IXQ4V7P1w8RN-daeNiH3r95a3nRGUUL6jNAIsoAf-ZPBt4DjluQl8LxQ/exec"
                   target="hidden_iframe"
-                  onsubmit="submitted=true;">
+                  onsubmit="document.getElementById('timestamp').value = new Date().toISOString(); submitted=true;">
                   
                     <input name="Name" type="text" placeholder="Name" required>
                     <input name="Email" type="email" placeholder="Email" required>
                     <input name="Business Name" type="text" placeholder="Business Name" required>
+                    <input type="hidden" id="timestamp" name="Timestamp">
                     <button type="submit" class="cta-button">Submit</button>
                 </form>
 
