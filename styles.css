@@ -51,30 +51,28 @@ video {
     border-radius: 10px;
 }
 
-/* SIGN-UP FORM */
-.signup-container, .about-container {
+/* TWO-COLUMN LAYOUT */
+.container {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    width: 80%;
     margin: 50px auto;
-    max-width: 900px;
+    flex-wrap: wrap;
 }
 
-.form-container, .text-container {
-    width: 50%;
-    padding: 20px;
+.column {
+    width: 48%;
+    text-align: left;
 }
 
-.image-container {
-    width: 50%;
-}
-
-.image-container img {
+.column img {
     width: 100%;
     border-radius: 10px;
 }
 
+/* FORM STYLING */
 input {
     display: block;
     width: 90%;
@@ -93,4 +91,16 @@ footer {
     font-size: 16px;
     padding: 20px;
     background-color: #f4f4f4;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .column {
+        width: 100%;
+    }
 }
