@@ -76,7 +76,7 @@ video {
     border-radius: 10px;
 }
 
-/* SIGN-UP FORM SECTION - Centering Heading, Form & Button */
+/* SIGN-UP FORM SECTION - Centering Everything */
 .signup-form .text-column {
     display: flex;
     flex-direction: column;
@@ -93,6 +93,7 @@ video {
     max-width: 400px;
     display: flex;
     flex-direction: column;
+    align-items: center; /* Ensures the form fields and button are centered */
 }
 
 .signup-form input {
@@ -103,10 +104,12 @@ video {
     border-radius: 5px;
 }
 
+/* Centering the Submit Button */
 .signup-form .cta-button {
     width: 100%;
     max-width: 200px;
     margin-top: 15px;
+    text-align: center;
 }
 
 /* Hide confirmation message by default */
