@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+header {
+    padding: 20px;
+    text-align: left;
+}
+
+#logo {
+    width: 150px;
+}
+
+.hero {
+    margin-top: 50px;
+}
+
+.video-container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.cta-button {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.images img {
+    width: 30%;
+    margin: 10px;
+    border-radius: 10px;
+}
