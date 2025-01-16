@@ -77,37 +77,40 @@
 
     <!-- FORM SUBMISSION SCRIPT -->
     <script>
-        function scrollToForm() {
-            document.getElementById("signup").scrollIntoView({ behavior: 'smooth' });
-        }
+    document.getElementById("accessForm").addEventListener("submit", async function(event) {
+        event.preventDefault();
 
-        document.getElementById("accessForm").addEventListener("submit", async function(event) {
-            event.preventDefault();
+        const formData = {
+            name: document.querySelector('input[name="name"]').value,
+            email: document.querySelector('input[name="email"]').value,
+            business: document.querySelector('input[name="business"]').value
+        };
 
-            const formData = {
-                name: document.querySelector('input[name="name"]').value,
-                email: document.querySelector('input[name="email"]').value,
-                business: document.querySelector('input[name="business"]').value
-            };
+        try {
+            const response = await fetch("YOUR_NEW_GOOGLE_SHEET_WEB_APP_URL", {
+                method: "POST",
+                headers: { 
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
 
-            try {
-                const response = await fetch("https://script.google.com/macros/s/AKfycbzrgDvAZvk9-g5Ww4I6TznUbf_LZMDC9-VwB3if3RI5DasCsEBHnYgEJPhVBtpxtVvRqg/exec", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(formData)
-                });
-
-                if (response.ok) {
-                    document.getElementById("accessForm").style.display = "none";
-                    document.getElementById("confirmation-message").style.display = "block";
-                } else {
-                    console.error("Form submission failed.");
-                }
-            } catch (error) {
-                console.error("Error submitting form:", error);
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
             }
-        });
-    </script>
+
+            const result = await response.json();
+            console.log("Form submitted:", result);
+
+            document.getElementById("accessForm").style.display = "none";
+            document.getElementById("confirmation-message").style.display = "block";
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            alert("There was an issue submitting the form. Please try again.");
+        }
+    });
+</script>
+
 
 </body>
 </html>
