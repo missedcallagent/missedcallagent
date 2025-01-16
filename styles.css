@@ -116,29 +116,36 @@ video {
     margin-top: 15px;
 }
 
-/* ABOUT SECTION - Padding Fix & Image Matching */
+/* ABOUT SECTION - Center Header & Button */
 .about .text-column {
-    text-align: left;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
+/* Aligning the "About Missed Call Agent" header */
+.about h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Adjusting spacing for "Get Early Access" button */
 .about .cta-button {
     align-self: center;
+    width: fit-content;
     margin: 20px auto 40px auto; /* Ensures alignment */
 }
 
-/* Make Image 2 match Image 3 */
+/* Ensuring Image 2 and Image 3 align at the bottom */
+.about .container {
+    align-items: flex-end; /* Makes both images align at the bottom */
+}
+
 .small-image {
     width: 100%;
     border-radius: 10px;
     margin-top: 20px;
-}
-
-/* Align buttons in About Section */
-.about .cta-button {
-    align-self: center;
-    width: fit-content;
 }
 
 /* PRIVACY POLICY */
