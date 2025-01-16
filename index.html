@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Missed Call Agent | AI Call Answering for Service Providers</title>
+    <title>Missed Call Agent | AI Call Answering</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -36,12 +36,24 @@
             <!-- Left Column: Form -->
             <div class="column text-column">
                 <h2>Get Early Access</h2>
-                <form id="accessForm">
-                    <input type="text" name="name" placeholder="Name *" required>
-                    <input type="email" name="email" placeholder="Email *" required>
-                    <input type="text" name="business" placeholder="Business Name *" required>
+
+                <!-- HTML Form Submission -->
+                <form 
+                  method="POST" 
+                  action="https://script.google.com/macros/s/AKfycbwfICumV-Q3h2IXQ4V7P1w8RN-daeNiH3r95a3nRGUUL6jNAIsoAf-ZPBt4DjluQl8LxQ/exec"
+                  target="hidden_iframe"
+                  onsubmit="submitted=true;">
+                  
+                    <input name="Email" type="email" placeholder="Email" required>
+                    <input name="Name" type="text" placeholder="Name" required>
+                    <input name="Business" type="text" placeholder="Business Name" required>
                     <button type="submit" class="cta-button">Submit</button>
                 </form>
+
+                <!-- Hidden iframe to prevent page reload -->
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+                <!-- Confirmation Message -->
                 <p id="confirmation-message" class="hidden">Thanks for your interest in Missed Call Agent, we will get with you as soon as possible!</p>
             </div>
 
@@ -75,42 +87,21 @@
         <p>© 2025 Missed Call Agent. All rights reserved.<br>Your privacy is important to us. We’ll only use your information to contact you about Missed Call Agent.</p>
     </footer>
 
-    <!-- FORM SUBMISSION SCRIPT -->
+    <!-- Scroll to Sign-up Form -->
     <script>
-    document.getElementById("accessForm").addEventListener("submit", async function(event) {
-        event.preventDefault();
-
-        const formData = {
-            name: document.querySelector('input[name="name"]').value,
-            email: document.querySelector('input[name="email"]').value,
-            business: document.querySelector('input[name="business"]').value
-        };
-
-        try {
-            const response = await fetch("https://script.google.com/macros/s/AKfycbzrgDvAZvk9-g5Ww4I6TznUbf_LZMDC9-VwB3if3RI5DasCsEBHnYgEJPhVBtpxtVvRqg/exec", {
-                method: "POST",
-                headers: { 
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(formData)
-            });
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-
-            const result = await response.json();
-            console.log("Form submitted:", result);
-
-            document.getElementById("accessForm").style.display = "none";
-            document.getElementById("confirmation-message").style.display = "block";
-        } catch (error) {
-            console.error("Error submitting form:", error);
-            alert("There was an issue submitting the form. Please try again.");
+        function scrollToForm() {
+            document.getElementById("signup").scrollIntoView({ behavior: 'smooth' });
         }
-    });
-</script>
 
+        var submitted = false;
+        document.querySelector("form").addEventListener("submit", function() {
+            setTimeout(function() {
+                if (submitted) {
+                    document.getElementById("confirmation-message").style.display = "block";
+                }
+            }, 1000);
+        });
+    </script>
 
 </body>
 </html>
