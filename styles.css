@@ -26,7 +26,7 @@ header {
 }
 
 .cta-button {
-    background-color: #14244D;
+    background-color: #ff6600;
     color: white;
     padding: 12px 24px;
     border: none;
@@ -76,21 +76,26 @@ video {
     border-radius: 10px;
 }
 
-/* SMALL IMAGE UNDER TEXT */
-.small-image {
-    width: 80%;
-    margin-top: 20px;
-}
-
-/* FORM STYLING */
-form {
+/* SIGN-UP FORM SECTION - Centering Heading, Form & Button */
+.signup-form .text-column {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    max-width: 400px;
+    align-items: center;
+    text-align: center;
 }
 
-input {
+.signup-form h2 {
+    margin-bottom: 20px;
+}
+
+.signup-form form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-form input {
     width: 100%;
     margin: 10px 0;
     padding: 12px;
@@ -98,8 +103,27 @@ input {
     border-radius: 5px;
 }
 
-.hidden {
-    display: none;
+.signup-form .cta-button {
+    width: 100%;
+    max-width: 200px;
+    margin-top: 15px;
+}
+
+/* ABOUT SECTION - Padding Fix */
+.about .text-column {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.about .cta-button {
+    align-self: center;
+    margin: 20px auto 40px auto; /* Increased bottom padding */
+}
+
+.small-image {
+    width: 80%;
+    margin-top: 20px;
 }
 
 /* PRIVACY POLICY */
@@ -122,11 +146,12 @@ footer {
         width: 100%;
     }
 
-    form {
+    .signup-form form {
         align-items: center;
     }
 
-    .small-image {
+    .about .cta-button {
         width: 100%;
+        max-width: 200px;
     }
 }
