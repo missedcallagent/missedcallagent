@@ -75,17 +75,18 @@
         <p>© 2025 Missed Call Agent. All rights reserved.<br>Your privacy is important to us. We’ll only use your information to contact you about Missed Call Agent.</p>
     </footer>
 
-    <script>
-        function scrollToForm() {
-            document.getElementById("signup").scrollIntoView({ behavior: 'smooth' });
-        }
+   <script>
+    function scrollToForm() {
+        document.getElementById("signup").scrollIntoView({ behavior: 'smooth' });
+    }
 
-        document.getElementById("accessForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            document.getElementById("accessForm").style.display = "none";
-            document.getElementById("confirmation-message").classList.remove("hidden");
-        });
-    </script>
+    document.getElementById("accessForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        document.getElementById("accessForm").style.display = "none";
+        document.getElementById("confirmation-message").style.display = "block"; // Show confirmation only after form submit
+    });
+</script>
+
 
 </body>
 </html>
