@@ -64,7 +64,7 @@
                   method="POST" 
                   action="https://script.google.com/macros/s/AKfycbwfICumV-Q3h2IXQ4V7P1w8RN-daeNiH3r95a3nRGUUL6jNAIsoAf-ZPBt4DjluQl8LxQ/exec"
                   target="hidden_iframe"
-                  onsubmit="document.getElementById('timestamp').value = new Date().toISOString(); submitted=true;">
+                  onsubmit="gtag('event', 'Form_Submission', {'event_category': 'Lead', 'event_label': 'Early Access'}); document.getElementById('timestamp').value = new Date().toISOString(); submitted=true;">
                   
                     <input name="Name" type="text" placeholder="Name*" required> <!-- Name input field -->
                     <input name="Email" type="email" placeholder="Email*" required> <!-- Email input field -->
