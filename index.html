@@ -1,70 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Missed Call Agent | AI Call-Answering for Service Providers</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Metadata for the webpage -->
+    <meta charset="UTF-8"> <!-- Defines the character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsiveness on mobile devices -->
+    <title>Missed Call Agent | AI Call-Answering for Service Providers</title> <!-- Page title shown in browser tab -->
+    <link rel="stylesheet" href="styles.css"> <!-- Links to external CSS file for styling -->
 </head>
 <body>
 
-    <!-- HEADER -->
+    <!-- HEADER SECTION -->
     <header>
         <div class="logo-container">
-            <img src="assets/logo.svg" alt="Missed Call Agent Logo" id="logo">
-            <h1>Missed Call Agent</h1>
+            <img src="assets/logo.svg" alt="Missed Call Agent Logo" id="logo"> <!-- Company logo (Recommended size: 150x50px, SVG format for scalability) -->
+            <h1>Missed Call Agent</h1> <!-- Main heading of the website -->
         </div>
-        <button class="cta-button" onclick="scrollToForm()">Sign Up</button>
+        <button class="cta-button" onclick="scrollToForm()">Sign Up</button> <!-- Call-to-action button to navigate to sign-up form -->
     </header>
 
     <!-- HERO SECTION -->
     <section class="hero">
-        <h2>Turn Missed Calls into Booked Appointments</h2>
+        <h2>Turn Missed Calls into Booked Appointments</h2> <!-- Main tagline -->
         <p>Are missed calls costing your business thousands? Our AI-powered solution handles calls so you can focus on running your business, not chasing leads.</p>
         
-       <!-- Video Commented Out, remove comments and upload video to assets (make sure to change name) if wanting to add it back)
+       <!-- Video Section (Commented Out: To enable, remove comments and upload video) -->
+       <!-- Recommended Video Size: 1920x1080px, MP4 format, optimized for web -->
+       <!--
         <div class="video-container">
             <video autoplay muted loop>
                 <source src="assets/MCAvideodemo.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-        </div> -->
+        </div>
+        -->
 
-        <!-- GIF Below the Video -->
+        <!-- GIF Section Below the Video -->
+        <!-- Recommended GIF Size: 500x300px, GIF format, optimized for web -->
         <div class="gif-container" onclick="scrollToForm()">
-            <img src="assets/MCAvideo.gif" alt="Missed Call Agent Demo GIF">
+            <img src="assets/MCAvideo.gif" alt="Missed Call Agent Demo GIF"> <!-- GIF preview of the AI call handling -->
         </div>
     </section>
 
     <!-- SIGN-UP FORM SECTION -->
     <section class="signup-form" id="signup">
         <div class="container">
-            <!-- Left Column: Form -->
+            <!-- Left Column: Sign-up Form -->
             <div class="column text-column">
                 <h2>Get Early Access</h2>
 
-                <!-- HTML Form Submission (Direct to Google Sheets Web App) -->
+                <!-- Form for collecting user data, submits to Google Sheets via Apps Script -->
                 <form 
                   method="POST" 
                   action="https://script.google.com/macros/s/AKfycbwfICumV-Q3h2IXQ4V7P1w8RN-daeNiH3r95a3nRGUUL6jNAIsoAf-ZPBt4DjluQl8LxQ/exec"
                   target="hidden_iframe"
                   onsubmit="document.getElementById('timestamp').value = new Date().toISOString(); submitted=true;">
                   
-                    <input name="Name" type="text" placeholder="Name*" required>
-                    <input name="Email" type="email" placeholder="Email*" required>
-                    <input name="Business Name" type="text" placeholder="Business Name*" required>
-                    <input type="hidden" id="timestamp" name="Timestamp">
-                    <button type="submit" class="cta-button">Submit</button>
+                    <input name="Name" type="text" placeholder="Name*" required> <!-- Name input field -->
+                    <input name="Email" type="email" placeholder="Email*" required> <!-- Email input field -->
+                    <input name="Business Name" type="text" placeholder="Business Name*" required> <!-- Business Name input field -->
+                    <input type="hidden" id="timestamp" name="Timestamp"> <!-- Hidden field for timestamp -->
+                    <button type="submit" class="cta-button">Submit</button> <!-- Submit button -->
                 </form>
 
-                <!-- Hidden iframe to prevent page reload -->
+                <!-- Hidden iframe prevents the form from reloading the page -->
                 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
-                <!-- Confirmation Message -->
+                <!-- Confirmation message displayed after form submission -->
                 <p id="confirmation-message" class="hidden">Your information has been submitted. Thanks for your interest in Missed Call Agent, we will get with you as soon as possible!</p>
             </div>
 
-            <!-- Right Column: Image -->
+            <!-- Right Column: Supporting Image -->
+            <!-- Recommended Image Size: 500x500px, JPG/PNG format -->
             <div class="column image-column">
                 <img src="assets/image1.jpg" alt="Feature 1">
             </div>
@@ -74,38 +80,40 @@
     <!-- ABOUT SECTION -->
     <section class="about">
         <div class="container">
-            <!-- Left Column: Text & Small Image -->
+            <!-- Left Column: Description and Call-to-Action -->
             <div class="column text-column">
                 <h2>About Missed Call Agent</h2>
                 <p>Missed Call Agent is a revolutionary app designed to help HVAC, Electrician, and Plumbers manage missed calls effectively. Your AI agent ensures that no call goes unanswered, captures customer details, and automatically books services, leading to increased revenue for you.</p>
                 <button class="cta-button" onclick="scrollToForm()">Get Early Access</button>
-                <img src="assets/image2.jpg" alt="Feature 2" class="small-image">
+                <img src="assets/image2.jpg" alt="Feature 2" class="small-image"> <!-- Supporting image (Recommended: 500x300px, PNG format) -->
             </div>
 
             <!-- Right Column: Large Image -->
             <div class="column image-column">
-                <img src="assets/image3.jpg" alt="Feature 3">
+                <img src="assets/image3.jpg" alt="Feature 3"> <!-- Recommended Image Size: 600x400px, JPG/PNG format -->
             </div>
         </div>
     </section>
 
-    <!-- PRIVACY POLICY -->
+    <!-- FOOTER / PRIVACY POLICY -->
     <footer>
         <p>© 2025 Missed Call Agent. All rights reserved.<br>Your privacy is important to us. We’ll only use your information to contact you about Missed Call Agent.</p>
     </footer>
 
-    <!-- Scroll to Sign-up Form -->
+    <!-- JavaScript Functions -->
     <script>
+        // Scrolls the page smoothly to the sign-up form section
         function scrollToForm() {
             document.getElementById("signup").scrollIntoView({ behavior: 'smooth' });
         }
 
+        // Handles form submission event and hides form upon submission
         var submitted = false;
         document.querySelector("form").addEventListener("submit", function() {
             setTimeout(function() {
                 if (submitted) {
                     document.querySelector("form").style.display = "none"; // Hide form
-                    document.getElementById("confirmation-message").style.display = "block";
+                    document.getElementById("confirmation-message").style.display = "block"; // Show confirmation message
                 }
             }, 1000);
         });
