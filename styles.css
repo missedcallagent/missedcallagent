@@ -1,13 +1,13 @@
-html, body {
-    max-width: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-
 /* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 body {
@@ -51,10 +51,25 @@ h1 {
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s;
+    width: auto; /* Fix overly wide buttons */
+    min-width: 150px;
+    max-width: 250px;
 }
 
-.cta-button:hover {
-    background-color: #e65c00;
+/* Center buttons on mobile */
+@media (max-width: 768px) {
+    .cta-button {
+        width: 80%;
+        max-width: 250px;
+    }
+}
+
+/* Ensure Confirmation Message is Hidden */
+#confirmation-message {
+    display: none; /* Hide until form is submitted */
+    font-size: 16px;
+    color: #333;
+    margin-top: 15px;
 }
 
 /* HERO SECTION */
@@ -84,8 +99,8 @@ h1 {
 
 .video-container video,
 .gif-container img {
-    width: 100%; /* Make both responsive */
-    max-width: 500px; /* Prevents oversized display */
+    width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
     margin: 20px auto;
@@ -136,6 +151,13 @@ button.cta-button {
     width: 50%;
 }
 
+/* Fix spacing between "About Missed Call Agent" title and text */
+.text-column h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Adds extra spacing */
+}
+
 .text-column p {
     text-align: left;
     font-size: 16px;
@@ -165,6 +187,7 @@ footer {
     .container {
         flex-direction: column;
         text-align: center;
+        align-items: center;
     }
 
     .text-column,
@@ -180,7 +203,7 @@ footer {
 
     .cta-button {
         width: 80%;
-        max-width: 300px;
+        max-width: 250px;
         margin: 10px auto;
     }
 
@@ -188,7 +211,7 @@ footer {
     .video-container video,
     .gif-container img {
         width: 100%;
-        max-width: 400px; /* Adjust for better scaling */
+        max-width: 100%;
         height: auto;
     }
 
@@ -197,5 +220,17 @@ footer {
         width: 90%;
         max-width: 350px;
         margin: auto;
+    }
+
+    /* Ensure about section aligns properly */
+    .text-column p,
+    .text-column h2 {
+        text-align: center;
+    }
+
+    .image-column img {
+        width: 90%;
+        max-width: 400px;
+        margin: 10px auto;
     }
 }
