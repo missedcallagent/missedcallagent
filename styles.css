@@ -5,6 +5,18 @@ body {
     padding: 0;
 }
 
+/* Ensure the GIF scales properly on all devices */
+.gif-container {
+    text-align: center; /* Center the GIF */
+    margin-top: 20px; /* Add spacing */
+}
+
+.gif-container img {
+    width: 100%; /* Make the GIF responsive */
+    max-width: 600px; /* Prevent it from becoming too large on desktop */
+    height: auto; /* Maintain aspect ratio */
+}
+
 /* HEADER */
 header {
     display: flex;
