@@ -73,6 +73,12 @@
                     <input name="Business Name" type="text" placeholder="Business Name*" required> <!-- Business Name input field -->
                     <input type="hidden" id="timestamp" name="Timestamp"> <!-- Hidden field for timestamp -->
                     <button type="submit" class="cta-button">Submit</button> <!-- Submit button -->
+                    <!-- Urgency Limited Spots number -->
+                    <div style="text-align: center; margin-top: 10px;">
+                        <p id="spotsLeft" style="font-size: 18px; font-weight: bold; color: red;">
+                            Only <span id="spots">100</span> Spots Left
+                        </p>
+                    </div>
                 </form>
 
                 <!-- Hidden iframe prevents the form from reloading the page -->
@@ -117,7 +123,7 @@
                 <!-- Javascript to create decreaseing spot number every day for 100 days -->
                 <script>
                     function updateSpotsLeft() {
-                        const startDate = new Date("2025-01-12"); // Set launch date
+                        const startDate = new Date("2025-01-17"); // Set launch date
                         const today = new Date();
                         const daysElapsed = Math.floor((today - startDate) / (1000 * 60 * 60 * 24)); // Days since launch
                         const totalSpots = 100;
