@@ -79,6 +79,7 @@
                             Only <span id="spots">100</span> Spots Left
                         </p>
                     </div>
+                    
                 </form>
 
                 <!-- Hidden iframe prevents the form from reloading the page -->
@@ -116,7 +117,7 @@
                 <!-- Urgency Limited Spots number -->
                 <div style="text-align: center; margin-top: 10px;">
                     <p id="spotsLeft" style="font-size: 18px; font-weight: bold; color: red;">
-                        Only <span id="spots">100</span> Spots Left—Join Now Before It’s Full!
+                        Only <span id="spots">100</span> Spots Left-Join Now Before It's Full!
                     </p>
                 </div>
                 
@@ -129,12 +130,13 @@
                         const totalSpots = 100;
                         const spotsLeft = Math.max(totalSpots - daysElapsed, 0); // Ensure it never goes below 0
                 
-                        document.getElementById("spots").textContent = spotsLeft;
+                        document.querySelectorAll("#spots").forEach(el => el.textContent = spotsLeft);
                 
                         // If no spots left, change message
                         if (spotsLeft === 0) {
-                            document.getElementById("spotsLeft").innerHTML = 
-                                "Early Access is Full! Join the Waitlist for the Next Batch.";
+                            document.querySelectorAll("#spotsLeft").forEach(el => {
+                                el.innerHTML = "Early Access is Full! Join the Waitlist for the Next Batch.";
+                            });
                         }
                     }
                 
