@@ -101,11 +101,41 @@
                 <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
                     <br><li><strong>Never Miss a Lead Again:</strong> Every call is answered instantly.</li>
                     <li><strong>Appointments Booked for You:</strong> Customers schedule themselves-automatically.</li>
-                    <li><strong>Pays for Iteself:</strong> Just <strong>1 booked job increases ROI</strong>.</li>
+                    <li><strong>Pays for Iteself:</strong> Just <strong>1 booked job-more than covers the cost-everything else is profit.</strong>.</li>
                 </ul>
 
                 <p><strong><br>Early access starts at $100/month. Secure your spot today.</strong></p>
                 <button class="cta-button" onclick="scrollToForm()">Get Early Access</button>
+
+                <!-- Urgency Limited Spots number -->
+                <div style="text-align: center; margin-top: 10px;">
+                    <p id="spotsLeft" style="font-size: 18px; font-weight: bold; color: red;">
+                        Only <span id="spots">100</span> Spots Left—Join Now Before It’s Full!
+                    </p>
+                </div>
+                
+                <!-- Javascript to create decreaseing spot number every day for 100 days -->
+                <script>
+                    function updateSpotsLeft() {
+                        const startDate = new Date("2025-01-12"); // Set launch date
+                        const today = new Date();
+                        const daysElapsed = Math.floor((today - startDate) / (1000 * 60 * 60 * 24)); // Days since launch
+                        const totalSpots = 100;
+                        const spotsLeft = Math.max(totalSpots - daysElapsed, 0); // Ensure it never goes below 0
+                
+                        document.getElementById("spots").textContent = spotsLeft;
+                
+                        // If no spots left, change message
+                        if (spotsLeft === 0) {
+                            document.getElementById("spotsLeft").innerHTML = 
+                                "Early Access is Full! Join the Waitlist for the Next Batch.";
+                        }
+                    }
+                
+                    updateSpotsLeft(); // Run on page load
+                </script>
+
+                <!-- Image 2 -->
                 <img src="assets/image2.jpg" alt="Feature 2" class="small-image"> <!-- Supporting image (Recommended: 500x300px, PNG format) -->
             </div>
 
@@ -118,7 +148,7 @@
 
     <!-- FOOTER / PRIVACY POLICY -->
     <footer>
-        <p><strong>100% ROI Guarantee:</strong> If Missed Call Agent doesn't generate at least it's monthly cost in booked jobs within the first month, you don't pay.</p>
+        <p><strong>100% ROI Guarantee:</strong> If Missed Call Agent doesn't pay for itself in the <strong>first</strong> month, you don't pay.</p>
         <p><br><br>© 2025 Missed Call Agent. All rights reserved.<br>Your privacy is important to us. We’ll only use your information to contact you about Missed Call Agent.</p>
     </footer>
 
