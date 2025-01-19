@@ -233,4 +233,15 @@ footer {
         max-width: 400px;
         margin: 10px auto;
     }
+
+    #spotsLeft {
+    text-align: center;
+    display: block;
+    margin: 10px auto; /* Centers the text horizontally */
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+    max-width: fit-content; /* Ensures it doesn’t stretch too wide */
+    }
+
 }
