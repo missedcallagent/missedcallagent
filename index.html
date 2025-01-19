@@ -63,7 +63,7 @@
         <div class="container">
             <!-- Left Column: Sign-up Form -->
             <div class="column text-column">
-                <h2>Get Early Access - Starts at $100/Month</h2>
+                <h2>Get Early Access - Starts at $100/Month </h2> <!-- Urgency Limited Spots number --><p id="spotsLeft" style="font-size: 18px; font-weight: bold; color: red;">Only <span id="spots">100</span> Spots Left</p>
                 <p><strong>Instantly answer calls, book customers, and recover lost revenue:</strong></p>
 
                 <!-- Form for collecting user data, submits to Google Sheets via Apps Script -->
@@ -78,21 +78,10 @@
                     <input name="Business Name" type="text" placeholder="Business Name*" required> <!-- Business Name input field -->
                     <input type="hidden" id="timestamp" name="Timestamp"> <!-- Hidden field for timestamp -->
                     <button type="submit" class="cta-button">Submit</button> <!-- Submit button -->
-                    <!-- Urgency Limited Spots number 
-                    <div style="margin-top: 10px;">
-                        <p id="spotsLeft" style="font-size: 18px; font-weight: bold; color: red;">
-                            Only <span id="spots">100</span> Spots Left
-                        </p>
-                    </div> -->
                     
                 </form>
                 
-                <!-- Urgency Limited Spots number 
-                <div style="margin-top: 10px;">
-                    <p id="spotsLeft" style="font-size: 18px; font-weight: bold; color: red;">
-                        Only <span id="spots">100</span> Spots Left
-                    </p>
-                </div>-->
+                
 
                 <!-- Hidden iframe prevents the form from reloading the page -->
                 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
