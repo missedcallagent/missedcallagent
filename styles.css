@@ -236,7 +236,7 @@ footer {
 
     #spotsLeft {
     text-align: center;
-    display: flex; /* Use flex to center text */
+    /*display: flex; /* Use flex to center text */
     /*justify-content: center; /* Horizontally centers content */
     align-items: center; /* Ensures vertical centering */
     margin-top: 10px;
