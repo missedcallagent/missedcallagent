@@ -28,7 +28,13 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1721000272165275&ev=PageView&noscript=1"
     /></noscript>
+
+    <script>
+      fbq('track', 'CompleteRegistration');
+    </script>
+
     <!-- End Meta Pixel Code -->
+
     
 </head>
 
@@ -102,10 +108,8 @@
                     <input name="Business Name" type="text" placeholder="Business Name*" required> <!-- Business Name input field -->
                     <input type="hidden" id="timestamp" name="Timestamp"> <!-- Hidden field for timestamp -->
                     <button type="submit" class="cta-button">Submit</button> <!-- Submit button -->
+                   
                     <!-- Meta Event Code-->
-                    <script>
-                      fbq('track', 'CompleteRegistration');
-                    </script>
                     <script type="text/javascript">
                     document.getElementById('submitButton').addEventListener('click', function() {
                     CompleteRegistration;
