@@ -28,11 +28,6 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1721000272165275&ev=PageView&noscript=1"
     /></noscript>
-
-    <script>
-      fbq('track', 'CompleteRegistration');
-    </script>
-
     <!-- End Meta Pixel Code -->
 
     
@@ -98,47 +93,28 @@
 
                 <!-- Form for collecting user data, submits to Google Sheets via Apps Script -->
                 <form 
+                  id="signupForm"
                   method="POST" 
                   action="https://script.google.com/macros/s/AKfycbwfICumV-Q3h2IXQ4V7P1w8RN-daeNiH3r95a3nRGUUL6jNAIsoAf-ZPBt4DjluQl8LxQ/exec"
                   target="hidden_iframe"
-                  onsubmit="gtag('event', 'Form_Submission', {'event_category': 'Lead', 'event_label': 'Early Access'}); document.getElementById('timestamp').value = new Date().toISOString(); submitted=true;">
+                  onsubmit="
+                    gtag('event','Form_Submission',{
+                      event_category:'Lead',
+                      event_label:'Early Access'
+                    });
+                    fbq('track','CompleteRegistration');
+                    document.getElementById('timestamp').value = new Date().toISOString();
+                    submitted=true;
+                  "
+                >
                   
                     <input name="Name" type="text" placeholder="Name*" required> <!-- Name input field -->
                     <input name="Email" type="email" placeholder="Email*" required> <!-- Email input field -->
                     <input name="Business Name" type="text" placeholder="Business Name*" required> <!-- Business Name input field -->
                     <input type="hidden" id="timestamp" name="Timestamp"> <!-- Hidden field for timestamp -->
                     <button type="submit" class="cta-button">Submit</button> <!-- Submit button -->
-
-                    <!-- Google tag (gtag.js) event - delayed navigation helper -->
-                    <script>
-                      // Helper function to delay opening a URL until a gtag event is sent.
-                      // Call it in response to an action that should navigate to a URL.
-                      function gtagSendEvent(url) {
-                        var callback = function () {
-                          if (typeof url === 'string') {
-                            window.location = url;
-                          }
-                        };
-                        gtag('event', 'conversion_event_signup', {
-                          'event_callback': callback,
-                          'event_timeout': 2000,
-                          // <event_parameters>
-                        });
-                        return false;
-                      }
-                    </script>
-
-                    
-                    <!-- Meta Event Code-->
-                    <script type="text/javascript">
-                    document.getElementById('submitButton').addEventListener('click', function() {
-                    CompleteRegistration;
-                    ...
-                    }, false);
-                    </script>
-
+               
                 </form>
-                
                 
 
                 <!-- Hidden iframe prevents the form from reloading the page -->
