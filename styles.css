@@ -148,6 +148,79 @@ button.cta-button {
     margin-top: 10px;
 }
 
+/* TRUST SIGNALS SECTION */
+.trust {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    border-top: 2px solid #e0e0e0;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.trust h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #003865; /* Deep blue for trust-building */
+    margin-bottom: 15px;
+}
+
+.trust p {
+    font-size: 18px;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* HOW IT WORKS SECTION */
+.how-it-works {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #ffffff;
+}
+
+.how-it-works h2 {
+    font-size: 30px;
+    font-weight: 800;
+    color: #003865; /* Deep blue */
+    margin-bottom: 25px;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.step {
+    width: 250px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+}
+
+.step img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.step p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+
 /* ABOUT SECTION */
 .about {
     padding: 40px 20px;
