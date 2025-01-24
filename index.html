@@ -134,6 +134,18 @@
             }
         }
         updateSpotsLeft();
+
+      // Handles form submission event and hides form upon submission
+        var submitted = false;
+        document.querySelector("form").addEventListener("submit", function() {
+            setTimeout(function() {
+                if (submitted) {
+                    document.querySelector("form").style.display = "none"; // Hide form
+                    document.getElementById("confirmation-message").style.display = "block"; // Show confirmation message
+                }
+            }, 1000);
+        });
+      
     </script>
 </body>
 </html>
