@@ -184,46 +184,24 @@ button.cta-button {
 .how-it-works .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+    justify-content: center;
+    flex-direction: column;
     max-width: 1100px;
     margin: 0 auto;
-}
-
-.text-column {
-    flex: 1;
-    text-align: left;
+    text-align: center;
 }
 
 .image-column {
-    flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
 .image-column img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-}
-
-.steps {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.step {
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-}
-
-.step:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* ABOUT SECTION */
