@@ -7,7 +7,7 @@
 
 html, body {
     max-width: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
 }
 
 body {
@@ -18,10 +18,10 @@ body {
 }
 
 .manrope-font {
-  font-family: "Manrope", serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
+    font-family: "Manrope", serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
 }
 
 /* HEADER */
@@ -58,12 +58,11 @@ h1 {
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s;
-    width: auto; /* Fix overly wide buttons */
+    width: auto;
     min-width: 150px;
     max-width: 250px;
 }
 
-/* Center buttons on mobile */
 @media (max-width: 768px) {
     .cta-button {
         width: 80%;
@@ -73,7 +72,7 @@ h1 {
 
 /* Ensure Confirmation Message is Hidden */
 #confirmation-message {
-    display: none; /* Hide until form is submitted */
+    display: none;
     font-size: 16px;
     color: #333;
     margin-top: 15px;
@@ -160,7 +159,7 @@ button.cta-button {
 .trust h2 {
     font-size: 28px;
     font-weight: 700;
-    color: #003865; /* Deep blue for trust-building */
+    color: #003865;
     margin-bottom: 15px;
 }
 
@@ -173,53 +172,48 @@ button.cta-button {
 
 /* HOW IT WORKS SECTION */
 .how-it-works {
-    text-align: center;
     padding: 60px 20px;
     background-color: #ffffff;
 }
 
-.how-it-works h2 {
-    font-size: 30px;
-    font-weight: 800;
-    color: #003865; /* Deep blue */
-    margin-bottom: 25px;
-}
-
-.steps-container {
+.how-it-works .container {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    max-width: 900px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
-.step {
-    width: 250px;
-    background: #f9f9f9;
-    padding: 20px;
+.text-column {
+    flex: 1;
+    text-align: left;
+}
+
+.image-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-column img {
+    max-width: 100%;
+    height: auto;
     border-radius: 10px;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.step {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.2s ease-in-out;
 }
-
-.step:hover {
-    transform: translateY(-5px);
-}
-
-.step img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 15px;
-}
-
-.step p {
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
-}
-
 
 /* ABOUT SECTION */
 .about {
@@ -231,22 +225,15 @@ button.cta-button {
     width: 50%;
 }
 
-/* Fix spacing between "About Missed Call Agent" title and text */
 .text-column h2 {
     font-size: 28px;
     font-weight: bold;
-    margin-bottom: 20px; /* Adds extra spacing */
+    margin-bottom: 20px;
 }
 
 .text-column p {
     text-align: left;
     font-size: 16px;
-}
-
-.text-column img {
-    width: 100%;
-    max-width: 400px;
-    margin-top: 20px;
 }
 
 .image-column img {
@@ -263,7 +250,6 @@ footer {
 
 /* MOBILE STYLES */
 @media (max-width: 768px) {
-    /* Stack elements vertically */
     .container {
         flex-direction: column;
         text-align: center;
@@ -287,43 +273,9 @@ footer {
         margin: 10px auto;
     }
 
-    /* Ensure video & GIF are fully responsive */
-    .video-container video,
-    .gif-container img {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-    }
-
-    /* Form Styling */
-    form {
-        width: 90%;
-        max-width: 350px;
-        margin: auto;
-    }
-
-    /* Ensure about section aligns properly */
-    .text-column p,
-    .text-column h2 {
-        text-align: center;
-    }
-
     .image-column img {
         width: 90%;
         max-width: 400px;
         margin: 10px auto;
     }
-
-    #spotsLeft {
-    text-align: center;
-    /*display: flex; /* Use flex to center text*/
-    justify-content: center; /* Horizontally centers content*/
-    align-items: center; /* Ensures vertical centering */
-    /*margin-top: 10px;*/
-    font-size: 18px;
-    font-weight: bold;
-    color: red;
-    width: 100%; /* Ensures full width for centering */
-    }
-
 }
