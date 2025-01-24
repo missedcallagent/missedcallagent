@@ -61,11 +61,9 @@ h1 {
     width: auto;
     min-width: 150px;
     max-width: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
+    
 }
+
 
 .cta-button:hover {
     background-color: #e65c00;
