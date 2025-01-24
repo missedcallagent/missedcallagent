@@ -1,227 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Metadata for the webpage -->
-    <meta charset="UTF-8"> <!-- Defines the character encoding -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsiveness on mobile devices -->
-    <title>Missed Call Agent | AI Call-Answering for Service Providers</title> <!-- Page title shown in browser tab -->
-    <link rel="stylesheet" href="styles.css"> <!-- Links to external CSS file for styling -->
-
-    <!-- Font Import -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missed Call Agent | AI Call-Answering for Service Pros</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1721000272165275');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1721000272165275&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-
-    
 </head>
-
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6VKZQ4WFEC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-6VKZQ4WFEC');
-</script>
-    
 <body>
-
-    <!-- HEADER SECTION -->
     <header>
         <div class="logo-container">
-            <img src="assets/logo.svg" alt="Missed Call Agent Logo" id="logo"> <!-- Company logo (Recommended size: 150x50px, SVG format for scalability) -->
-            <h1>Missed Call Agent</h1> <!-- Main heading of the website -->
+            <img src="assets/logo.svg" alt="Missed Call Agent Logo" id="logo">
+            <h1>Missed Call Agent</h1>
         </div>
-        <button class="cta-button" onclick="scrollToForm()">Sign Up</button> <!-- Call-to-action button to navigate to sign-up form -->
+        <button class="cta-button" onclick="scrollToForm()">Sign Up</button>
     </header>
 
-    <!-- HERO SECTION -->
     <section class="hero">
-        <h2>Missed Calls = Missed Revenue. Fix It.</h2> <!-- Main tagline -->
-        <p>27% of service calls go unanswered-costing you jobs and revenue.</p>
-        <p><strong>Missed Call Agent answers, qualifies, and books your customers automatically, so you never lose a lead again.</strong></p>
-        
-       <!-- Video Section (Commented Out: To enable, remove comments and upload video) -->
-       <!-- Recommended Video Size: 1920x1080px, MP4 format, optimized for web -->
-       <!--
-        <div class="video-container">
-            <video autoplay muted loop>
-                <source src="assets/MCAvideodemo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        -->
-
-        <!-- GIF Section Below the Video -->
-        <!-- Recommended GIF Size: 500x300px, GIF format, optimized for web -->
+        <h2>Never Miss a Service Call Again – Let AI Handle It.</h2>
+        <p>📞 **27% of service calls go unanswered – costing you thousands in lost jobs & revenue.**</p>
+        <p>**Missed Call Agent answers, books, and grows your business while you work.**</p>
         <div class="gif-container" onclick="scrollToForm()">
-            <img src="assets/MCAvideo.gif" alt="Missed Call Agent Demo GIF"> <!-- GIF preview of the AI call handling -->
+            <img src="assets/MCAvideo.gif" alt="Missed Call Agent Demo GIF">
         </div>
     </section>
 
-    <!-- SIGN-UP FORM SECTION -->
     <section class="signup-form" id="signup">
         <div class="container">
-            <!-- Left Column: Sign-up Form -->
             <div class="column text-column">
-                <h2>Get Early Access - Starts at $100/Month:  
-                    <span id="spotsLeft" style="color: red;">
-                        Only <span id="spots">100</span> Spots Left
-                    </span>
+                <h2>🚀 Get Early Access – Starts at **$100/Month**
+                    <span id="spotsLeft" style="color: red;">Only <span id="spots">100</span> Spots Left!</span>
                 </h2>
-
-                <p><strong>Instantly answer calls, book customers, and recover lost revenue:</strong></p>
-
-                <!-- Form for collecting user data, submits to Google Sheets via Apps Script -->
-                <form 
-                  id="signupForm"
-                  method="POST" 
-                  action="https://script.google.com/macros/s/AKfycbwfICumV-Q3h2IXQ4V7P1w8RN-daeNiH3r95a3nRGUUL6jNAIsoAf-ZPBt4DjluQl8LxQ/exec"
-                  target="hidden_iframe"
-                  onsubmit="
-                    gtag('event','Form_Submission',{
-                      event_category:'Lead',
-                      event_label:'Early Access'
-                    });
-                    fbq('track','CompleteRegistration');
-                    document.getElementById('timestamp').value = new Date().toISOString();
-                    submitted=true;
-                  "
-                >
-                  
-                    <input name="Name" type="text" placeholder="Name*" required> <!-- Name input field -->
-                    <input name="Email" type="email" placeholder="Email*" required> <!-- Email input field -->
-                    <input name="Business Name" type="text" placeholder="Business Name*" required> <!-- Business Name input field -->
-                    <input type="hidden" id="timestamp" name="Timestamp"> <!-- Hidden field for timestamp -->
-                    <button type="submit" class="cta-button">Submit</button> <!-- Submit button -->
-               
+                <p>✅ **AI answers calls instantly** – No more lost leads.</p>
+                <p>✅ **Books appointments automatically** – Stop chasing customers.</p>
+                <p>✅ **Works 24/7** – Handles calls even when you're on the job.</p>
+                <p>✅ **Built for HVAC, Plumbers & Electricians** – Not generic software.</p>
+                <p>✅ **Pays for itself** – Just **1 booked job** covers the cost. Everything else is profit.</p>
+                <p><strong>100% ROI Guarantee:</strong> If Missed Call Agent doesn’t pay for itself in the first 30 days, you **don’t pay.**</p>
+                <form id="signupForm" method="POST" action="https://script.google.com/macros/s/AKfycbwfICumV-Q3h2IXQ4V7P1w8RN-daeNiH3r95a3nRGUUL6jNAIsoAf-ZPBt4DjluQl8LxQ/exec" target="hidden_iframe" onsubmit="gtag('event','Form_Submission',{event_category:'Lead',event_label:'Early Access'}); fbq('track','CompleteRegistration'); document.getElementById('timestamp').value = new Date().toISOString(); submitted=true;">
+                    <input name="Name" type="text" placeholder="Name*" required>
+                    <input name="Email" type="email" placeholder="Email*" required>
+                    <input name="Business Name" type="text" placeholder="Business Name*" required>
+                    <input type="hidden" id="timestamp" name="Timestamp">
+                    <button type="submit" class="cta-button">Submit</button>
                 </form>
-                
-
-                <!-- Hidden iframe prevents the form from reloading the page -->
                 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-                
-                <!-- Urgency Limited Spots number 
-                <div style="margin-top: 10px;">
-                    <p id="spotsLeft" style="font-size: 18px; font-weight: bold; color: red;">
-                        Only <span id="spots">100</span> Spots Left
-                    </p>
-                </div>-->
-                
-                <!-- Confirmation message displayed after form submission -->
-                <p id="confirmation-message" class="hidden">Your information has been submitted. Thanks for your interest in Missed Call Agent, we will get with you as soon as possible!</p>
+                <p id="confirmation-message" class="hidden">✅ Your info is submitted. We’ll reach out soon!</p>
             </div>
-            
-            
-            
-            <!-- Right Column: Supporting Image -->
-            <!-- Recommended Image Size: 500x500px, JPG/PNG format -->
             <div class="column image-column">
                 <img src="assets/image1.jpg" alt="Feature 1">
             </div>
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
     <section class="about">
         <div class="container">
-            <!-- Left Column: Description and Call-to-Action -->
             <div class="column text-column">
-                <h2>AI Answers. Schedules. Grows Your Business.</h2>
-                <p>Missed Call Agent is there for you 24/7, built for HVAC, Electricians, and Plumbers.</p>
-        
-                <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
-                    <br><li><strong>Never Miss a Lead Again:</strong> Every call is answered instantly.</li>
-                    <li><strong>Appointments Booked for You:</strong> Customers schedule themselves-automatically.</li>
-                    <li><strong>Pays for Iteself:</strong> Just <strong>1 booked job</strong>-more than covers the cost-everything else is profit.</li>
+                <h2>🔹 AI Answers. Schedules. Grows Your Business.</h2>
+                <p>Missed Call Agent **recovers lost revenue** for HVAC, Electricians, and Plumbers.</p>
+                <ul>
+                    <li>📞 **Never Miss a Lead Again** – Every call is answered instantly.</li>
+                    <li>📅 **Appointments Booked for You** – Customers schedule themselves.</li>
+                    <li>💰 **Pays for Itself** – Just 1 booked job covers the cost.</li>
                 </ul>
-
-                <p><strong><br>Early access starts at $100/month. Secure your spot today.</strong></p>
+                <p><strong>Limited Early Access – Just **$100/month**. Secure your spot now.</strong></p>
                 <button class="cta-button" onclick="scrollToForm()">Get Early Access</button>
-
-                <!-- Urgency Limited Spots number -->
                 <div style="text-align: center; margin-top: 10px;">
-                    <p id="spotsLeft" style="font-size: 18px; font-weight: bold; color: red;">
-                        Only <span id="spots">100</span> Spots Left-Join Now Before It's Full!
-                    </p>
+                    <p id="spotsLeft" style="font-size: 18px; font-weight: bold; color: red;">Only <span id="spots">100</span> Spots Left!</p>
                 </div>
-                
-                <!-- Javascript to create decreaseing spot number every day for 100 days -->
-                <script>
-                    function updateSpotsLeft() {
-                        const startDate = new Date("2025-01-01"); // Set launch date
-                        const today = new Date();
-                        const daysElapsed = Math.floor((today - startDate) / (1000 * 60 * 60 * 24)); // Days since launch
-                        const totalSpots = 100;
-                        const spotsLeft = Math.max(totalSpots - daysElapsed, 0); // Ensure it never goes below 0
-                
-                        document.querySelectorAll("#spots").forEach(el => el.textContent = spotsLeft);
-                
-                        // If no spots left, change message
-                        if (spotsLeft === 0) {
-                            document.querySelectorAll("#spotsLeft").forEach(el => {
-                                el.innerHTML = "Early Access is Full! Join the Waitlist for the Next Batch.";
-                            });
-                        }
-                    }
-                
-                    updateSpotsLeft(); // Run on page load
-                </script>
-
-                <!-- Image 2 
-                <img src="assets/image2.jpg" alt="Feature 2" class="small-image"> <!-- Supporting image (Recommended: 500x300px, PNG format) -->
-            </div> 
-
-            <!-- Right Column: Large Image -->
+            </div>
             <div class="column image-column">
-                <img src="assets/PathFlow.gif" alt="Choose your AI Path"> <!-- Added GIF - Recommended Image Size: 600x400px, JPG/PNG format -->
+                <img src="assets/PathFlow.gif" alt="Choose your AI Path">
             </div>
         </div>
     </section>
 
-    <!-- FOOTER / PRIVACY POLICY -->
     <footer>
-        <p><strong>100% ROI Guarantee:</strong> If Missed Call Agent doesn't pay for itself in the <strong>first</strong> month, you don't pay.</p>
-        <p><br><br>© 2025 Missed Call Agent. All rights reserved.<br>Your privacy is important to us. We’ll only use your information to contact you about Missed Call Agent.</p>
+        <p><strong>100% ROI Guarantee:</strong> If Missed Call Agent doesn’t pay for itself in **30 days**, you don’t pay.</p>
+        <p>© 2025 Missed Call Agent. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript Functions -->
     <script>
-        // Scrolls the page smoothly to the sign-up form section
         function scrollToForm() {
             document.getElementById("signup").scrollIntoView({ behavior: 'smooth' });
         }
-
-        // Handles form submission event and hides form upon submission
-        var submitted = false;
-        document.querySelector("form").addEventListener("submit", function() {
-            setTimeout(function() {
-                if (submitted) {
-                    document.querySelector("form").style.display = "none"; // Hide form
-                    document.getElementById("confirmation-message").style.display = "block"; // Show confirmation message
-                }
-            }, 1000);
-        });
+        function updateSpotsLeft() {
+            const startDate = new Date("2025-01-01");
+            const today = new Date();
+            const daysElapsed = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+            const totalSpots = 100;
+            const spotsLeft = Math.max(totalSpots - daysElapsed, 0);
+            document.querySelectorAll("#spots").forEach(el => el.textContent = spotsLeft);
+            if (spotsLeft === 0) {
+                document.querySelectorAll("#spotsLeft").forEach(el => {
+                    el.innerHTML = "Early Access is Full! Join the Waitlist.";
+                });
+            }
+        }
+        updateSpotsLeft();
     </script>
-
 </body>
 </html>
+
