@@ -1,3 +1,17 @@
+
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #f4f6f7;
+    --text-color: #2c3e50;
+    --accent-color: #ff6b6b;
+    --gradient-primary: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    --gradient-secondary: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+    --glass-background: rgba(255, 255, 255, 0.8);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
 /* General Reset */
 * {
     margin: 0;
@@ -259,7 +273,8 @@ button.cta-button {
 footer {
     padding: 20px;
     font-size: 14px;
-    background-color: #f1f1f1;
+    background-color: var(--gradient-primary);
+    color: white;
 }
 
 /* MOBILE STYLES */
