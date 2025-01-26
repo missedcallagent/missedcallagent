@@ -24,6 +24,7 @@ html, body {
     overflow-x: hidden;
     scroll-behavior: smooth;
     font-family: "Manrope", sans-serif;
+    text-align: center;
     background: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
