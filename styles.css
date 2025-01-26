@@ -91,7 +91,7 @@ header {
 
 /* CTA Button Styling */
 .cta-button {
-    background: var(--gradient-secondary);
+    background: linear-gradient(135deg, #ff6b6b, #feca57); /* Explicitly define the gradient */
     color: white;
     border: none;
     padding: 12px 20px;
@@ -104,8 +104,7 @@ header {
     max-width: 250px;
     box-shadow: 
         0 5px 15px rgba(0, 0, 0, 0.1),
-        inset 0 2px 4px rgba(255, 255, 255, 0.2); /* Added glass effect */
-    background-blend-mode: overlay; /* Optional: adds more depth */
+        inset 0 2px 4px rgba(255, 255, 255, 0.2);
 }
 
 .cta-button:hover {
