@@ -80,7 +80,7 @@
                     <p><strong>✔ 100% ROI Guarantee</strong> – If it doesn’t pay for itself in 30 days, you don’t pay.</p>
                 </div>
               
-                <form id="signupForm" method="POST" action="https://script.google.com/macros/s/AKfycbwfICumV-Q3h2IXQ4V7P1w8RN-daeNiH3r95a3nRGUUL6jNAIsoAf-ZPBt4DjluQl8LxQ/exec" target="hidden_iframe" onsubmit="gtag('event','Form_Submission',{event_category:'Lead',event_label:'Early Access'}); fbq('track','CompleteRegistration'); document.getElementById('timestamp').value = new Date().toISOString(); submitted=true;">
+                <form id="signupForm" method="POST" action="https://script.google.com/macros/s/AKfycbwfICumV-Q3h2IXQ4V7P1w8RN-daeNiH3r95a3nRGUUL6jNAIsoAf-ZPBt4DjluQl8LxQ/exec" target="hidden_iframe" onsubmit="gtag('event','Form_Submission',{event_category:'Lead',event_label:'Early Access'}); fbq('track','CompleteRegistration'); document.getElementById('timestamp').value = new Date().toISOString(); setTimeout(function() { window.location.href = 'signedup.html'; }, 500); submitted=true;">
                     <input name="Name" type="text" placeholder="Name*" required>
                     <input name="Email" type="email" placeholder="Email*" required>
                     <input name="Business Name" type="text" placeholder="Business Name*" required>
@@ -198,6 +198,7 @@
                 if (submitted) {
                     document.querySelector("form").style.display = "none"; // Hide form
                     document.getElementById("confirmation-message").style.display = "block"; // Show confirmation message
+                  
                 }
             }, 1000);
         });
