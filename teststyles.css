@@ -50,7 +50,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  /* Reduced padding here */
+  padding: 8px 16px;
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
@@ -60,23 +61,25 @@ header {
 }
 
 .logo-container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #logo {
-    width: 50px;
-    height: auto;
-    margin-right: 10px;
-    transition: transform 0.3s ease;
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
 }
 
 #logo:hover {
-    transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
 /* ========== HERO SECTION ========== */
+/* Added margin-top so hero is not hidden under sticky header */
 .hero {
+  margin-top: 80px;
   padding: var(--section-padding);
   background: var(--gradient-primary);
   text-align: center;
@@ -231,56 +234,3 @@ input:focus {
     max-width: 1200px;
   }
 
-  .hero h2 {
-    font-size: 3rem;
-  }
-
-  .gif-container {
-    margin: 4rem auto;
-  }
-}
-
-/* Mobile-Specific Adjustments */
-@media (max-width: 480px) {
-  :root {
-    --section-padding: 3rem 1rem;
-  }
-
-  .hero h2 {
-    font-size: 1.75rem;
-  }
-
-  form {
-    padding: 1.5rem;
-  }
-
-  .steps {
-    grid-template-columns: 1fr;
-  }
-
-  .step {
-    padding: 1.5rem;
-  }
-}
-
-/* ========== ANIMATIONS ========== */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes gradientFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Apply Animations */
-.hero, .signup-form, .how-it-works {
-  animation: fadeIn 0.8s ease-out;
-}
-
-.cta-button {
-  background-size: 200% auto;
-  animation: gradientFlow 4s ease infinite;
-}
