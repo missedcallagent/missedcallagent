@@ -61,12 +61,14 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  height: 60px;
 }
 
 #logo {
-  width: 50px;
-  height: 50px;
+  width: 32px;
+  height: 32px;
   transition: transform 0.3s ease;
+  object-fit: contain;
 }
 
 /* ========== HERO SECTION ========== */
@@ -212,6 +214,11 @@ input:focus {
 
   .cta-button {
     max-width: 350px;
+  }
+
+  #logo {
+    width: 40px;
+    height: 40px;
   }
 }
 
