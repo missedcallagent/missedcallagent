@@ -21,7 +21,7 @@
     <!-- Google Tag Manager -->
     <script>/* Your existing GTM code */</script>
     <!-- Hotjar Heatmap -->
-    <script>/* Add heatmap code from previous answer */</script>
+    <script>/* Add heatmap code if desired */</script>
 </head>
 
 <body>
@@ -141,37 +141,14 @@
         </div>
     </section>
 
-    <!-- FOOTER WITH SECONDARY CTA -->
-    <footer class="conversion-footer">
-        <p class="footer-cta">Still thinking? Get our FREE guide: "5 Ways HVAC Pros Lose $10k/Mo"</p>
-        <button class="cta-button footer-button" onclick="scrollToForm()">
-            Download Free Guide
-        </button>
-        <!-- Footer links, including Privacy Policy -->
-        <div class="footer-links">
-            <a href="#privacy-policy">Privacy Policy</a>
-        </div>
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>100% ROI Guarantee:</strong> If Missed Call Agent doesn’t pay for itself in 30 days, you don’t pay.</p>
+        <p>© 2025 Missed Call Agent. All rights reserved.</p>
+        <a href="privacypolicy.html">Privacy Policy</a>
     </footer>
 
-    <!-- PRIVACY POLICY SECTION -->
-    <section id="privacy-policy" class="policy-section">
-        <h2>Privacy Policy</h2>
-        <p>
-            We value your privacy. This policy outlines how we collect, use, and protect
-            any information you provide when visiting or using our services.
-        </p>
-        <p>
-            We only use your personal data to enhance your experience and never share
-            it with third parties without your consent. You can request to have your
-            data deleted at any time by contacting us at support@example.com.
-        </p>
-        <p>
-            By using this site, you agree to the terms outlined here. We reserve the
-            right to update this policy as needed.
-        </p>
-    </section>
-
-    <!-- CONVERSION SCRIPTS -->
+    <!-- SCRIPTS -->
     <script>
     // Scroll to form function
     function scrollToForm() {
@@ -187,7 +164,7 @@
 
         // Countdown timer
         const countdownElement = document.getElementById('countdown');
-        let seconds = 17947; // 4h 59m 07s, example
+        let seconds = 17947; // Example: 4h 59m 07s
         setInterval(() => {
             const hours = Math.floor(seconds / 3600);
             const minutes = Math.floor((seconds % 3600) / 60);
