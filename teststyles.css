@@ -1,198 +1,275 @@
-/* ========== CORE STYLES ==========  */
+/* ========== CORE VARIABLES ========== */
 :root {
-    /* Conversion-focused colors */
-    --primary: #2A5CFF; /* Trustworthy blue */
-    --secondary: #FF5E1F; /* Urgent orange */
-    --accent: #00C853; /* Positive green */
-    --dark: #1A1D24; /* Professional dark */
-    --light: #F8FAFF; /* Clean background */
+  /* Modern Gradient Color Scheme */
+  --gradient-primary: linear-gradient(135deg, #0066FF 0%, #00C2FF 100%); /* Professional blue */
+  --gradient-secondary: linear-gradient(135deg, #FF6B35 0%, #FFA735 100%); /* Accent orange */
+  --gradient-dark: linear-gradient(135deg, #1A1D24 0%, #2D313A 100%);
+  --text-primary: #1A1D24;
+  --text-light: #F8FAFF;
+  --section-padding: 4rem 1.5rem;
 }
 
+/* ========== BASE STYLES ========== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    transition: all 0.3s ease;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Manrope', sans-serif;
-    line-height: 1.6;
-    color: var(--dark);
-    background: var(--light);
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  overflow-x: hidden;
 }
 
-/* ========== HEADER ========== */
-.sticky-header {
-    position: sticky;
-    top: 0;
-    background: rgba(255,255,255,0.98);
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-    z-index: 1000;
+/* ========== RESPONSIVE MEDIA ========== */
+img, video, .gif-container {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* ========== MOBILE-FIRST LAYOUT ========== */
+.container {
+  width: 100%;
+  padding: 0 1.5rem;
+  margin: 0 auto;
 }
 
-.logo-group {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+/* Header Styling */
+header {
+  background: var(--gradient-dark);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.logo {
-    width: 45px;
-    height: 45px;
-    transition: transform 0.3s;
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-.logo:hover {
-    transform: rotate(15deg);
+#logo {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease;
 }
 
 /* ========== HERO SECTION ========== */
 .hero {
-    padding: 4rem 1rem;
-    background: linear-gradient(135deg, var(--primary) 0%, #1A3D8C 100%);
-    color: white;
+  padding: var(--section-padding);
+  background: var(--gradient-primary);
+  text-align: center;
+  color: var(--text-light);
 }
 
-.headline {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
+.hero h2 {
+  font-size: 2rem;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.highlight {
-    color: var(--secondary);
-    position: relative;
-    display: inline-block;
+.gif-container {
+  position: relative;
+  max-width: 800px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 16px;
 }
 
-.highlight::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: var(--secondary);
+.gif-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
-/* ========== URGENCY BANNER ========== */
-.urgency-banner {
-    background: var(--dark);
-    color: white;
-    padding: 1rem;
-    margin: 2rem 0;
-    border-radius: 8px;
-    animation: pulse 1.5s infinite;
+/* ========== SIGNUP FORM SECTION ========== */
+.signup-form {
+  padding: var(--section-padding);
+  background: #fff;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-    100% { transform: scale(1); }
+.signup-form .container {
+  display: grid;
+  gap: 3rem;
+  max-width: 1200px;
 }
 
-/* ========== CONVERSION FORM ========== */
-.conversion-form {
-    padding: 4rem 1rem;
-    background: white;
+.text-column {
+  text-align: center;
 }
 
-.form-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+/* ========== FORM STYLES ========== */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
 }
 
-.benefits-list {
-    list-style: none;
-    margin: 2rem 0;
+input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
 }
 
-.benefit-item {
-    padding: 1rem;
-    margin: 0.5rem 0;
-    background: var(--light);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+input:focus {
+  border-color: var(--gradient-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
 }
 
 /* ========== CTA BUTTONS ========== */
 .cta-button {
-    background: linear-gradient(135deg, var(--secondary) 0%, #FF3D00 100%);
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-weight: 700;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  background: var(--gradient-secondary);
+  color: var(--text-light);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+  margin: 1rem auto;
 }
 
 .cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255,94,31,0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
 }
 
-/* ========== FORM STYLES ========== */
-.form-input {
-    width: 100%;
-    padding: 1rem;
-    margin: 0.5rem 0;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 1rem;
+/* ========== HOW IT WORKS SECTION ========== */
+.how-it-works {
+  padding: var(--section-padding);
+  background: var(--gradient-dark);
+  color: var(--text-light);
 }
 
-.form-input:focus {
-    border-color: var(--primary);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(42,92,255,0.2);
+.steps {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* ========== TRUST BADGES ========== */
-.trust-bar {
-    background: var(--light);
-    padding: 1.5rem;
-    border-bottom: 2px solid #e0e0e0;
+.step {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  text-align: center;
+  backdrop-filter: blur(10px);
 }
 
-.trust-items {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
+/* ========== MEDIA QUERIES ========== */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .signup-form .container {
+    grid-template-columns: 1fr 1fr;
     align-items: center;
+  }
+
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cta-button {
+    max-width: 350px;
+  }
 }
 
-/* ========== RESPONSIVE DESIGN ========== */
-@media (max-width: 768px) {
-    .form-container {
-        grid-template-columns: 1fr;
-    }
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+  }
 
-    .headline {
-        font-size: 1.8rem;
-    }
+  .hero h2 {
+    font-size: 3rem;
+  }
 
-    .cta-button {
-        width: 100%;
-        text-align: center;
-    }
+  .gif-container {
+    margin: 4rem auto;
+  }
+}
+
+/* Mobile-Specific Adjustments */
+@media (max-width: 480px) {
+  :root {
+    --section-padding: 3rem 1rem;
+  }
+
+  .hero h2 {
+    font-size: 1.75rem;
+  }
+
+  form {
+    padding: 1.5rem;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .step {
+    padding: 1.5rem;
+  }
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Apply Animations */
+.hero, .signup-form, .how-it-works {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.cta-button {
+  background-size: 200% auto;
+  animation: gradientFlow 4s ease infinite;
 }
