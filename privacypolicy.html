@@ -1,43 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | Missed Call Agent</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Links to existing styles -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Privacy Policy</title>
+
+  <!-- Shared Theme & Style -->
+  <style>
+    :root {
+      /* Matching the requested primary color & gradient */
+      --primary: #6a11cb;
+      --primary-dark: #2ecc71;
+      --secondary: #2c3e50;
+      --accent: #ff6b6b;
+      --gray-50: #f4f6f7;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-800: #1e293b;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      --gradient-primary: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      --gradient-secondary: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+      --glass-background: rgba(255, 255, 255, 0.8);
+      --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: var(--secondary);
+      background-color: var(--gray-50);
+    }
+
+    header {
+      background: white;
+      box-shadow: var(--shadow-sm);
+      padding: 1rem;
+    }
+
+    footer {
+      background: var(--gradient-primary); /* Gradient in the footer */
+      color: #fff;
+      padding: 1rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    h1, h2, h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    p, li {
+      margin-bottom: 1rem;
+    }
+
+    /* Header / Nav */
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      font-weight: bold;
+      color: var(--primary);
+      font-size: 1.5rem;
+    }
+    .header-logo img {
+      height: 32px;
+      margin-right: 0.5rem;
+    }
+    .nav-link {
+      color: var(--secondary);
+      text-decoration: none;
+      margin-left: 1rem;
+      font-weight: 500;
+    }
+    .nav-link:hover {
+      color: var(--primary);
+    }
+
+    /* Footer */
+    footer p {
+      text-align: center;
+      opacity: 0.95;
+    }
+  </style>
 </head>
 <body>
+  <!-- Header with Logo -->
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="assets/logo.svg" alt="Missed Call Agent Logo">
+        Missed Call Agent
+      </a>
+      <nav>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="termsandservice.html" class="nav-link">Terms</a>
+      </nav>
+    </div>
+  </header>
 
-    <header>
-        <div class="logo-container">
-            <a href="index.html"><img src="assets/logo.svg" alt="Missed Call Agent Logo" id="logo"></a>
-            <h1 text-align: center;>Privacy Policy</h1>
-        </div>
-    </header>
+  <main class="container">
+    <h1>Privacy Policy</h1>
+    <p><em>Last Updated: January 28, 2025</em></p>
 
-    <section class="content">
-        <h2>Privacy Policy</h2>
-        <p>Effective Date: January 1, 2025</p>
+    <p>
+      This Privacy Policy explains how we collect, use, disclose, and safeguard your information 
+      when you visit or use our website (the “Service”). 
+      Please read this policy carefully. If you do not agree with the terms of this Privacy Policy, 
+      please do not access the Service.
+    </p>
 
-        <p>Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our website.</p>
+    <h2>Information We Collect</h2>
+    <p>
+      We may collect both personally identifiable information (such as your name, email address, or payment details) 
+      and non-personally identifiable information (such as browser type, referring URLs, or usage data). 
+      The type of information we collect depends on how you interact with the Service.
+    </p>
 
-        <h3>1. Information We Collect</h3>
-        <p>We collect information that you provide to us when signing up, contacting support, or using our services.</p>
+    <h2>How We Use Your Information</h2>
+    <ul>
+      <li><strong>Service Delivery:</strong> We use the data to provide, maintain, and improve our services.</li>
+      <li><strong>Analytics:</strong> We may analyze how users interact with the Service to enhance user experience.</li>
+      <li><strong>Compliance:</strong> We may use your data to comply with applicable laws or regulations.</li>
+    </ul>
 
-        <h3>2. How We Use Your Information</h3>
-        <p>We use your information to provide services, improve functionality, and communicate updates.</p>
+    <h2>Cookies and Tracking</h2>
+    <p>
+      We may use cookies or similar tracking technologies to collect information about your interaction with the Service 
+      and enhance your experience. You can manage or disable cookies in your browser settings, but doing so may affect 
+      certain functionalities of the Service.
+    </p>
 
-        <h3>3. Third-Party Services</h3>
-        <p>We may share data with trusted third-party services for analytics and advertising purposes.</p>
+    <h2>Sharing of Information</h2>
+    <p>
+      We do not sell or rent your personal information to third parties. 
+      We may share information with service providers or partners who assist in operating our business, 
+      so long as they agree to keep this information confidential. 
+      We may also disclose information if required by law or to protect our rights or others’ safety.
+    </p>
 
-        <h3>4. Contact Us</h3>
-        <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:support@missedcallagent.com">support@missedcallagent.com</a>.</p>
-    </section>
+    <h2>Data Security</h2>
+    <p>
+      We implement reasonable measures to protect the security of your personal information. 
+      However, no method of transmission over the internet or electronic storage is completely secure, 
+      and we cannot guarantee absolute security.
+    </p>
 
-    <footer>
-        <p>© 2025 Missed Call Agent. All rights reserved.</p>
-        <a href="index.html">Back to Home</a>
-    </footer>
+    <h2>Third-Party Links</h2>
+    <p>
+      The Service may contain links to third-party websites or services. 
+      We are not responsible for the content or privacy practices of such external sites. 
+      We encourage you to review the privacy policies of those sites before providing any information.
+    </p>
 
+    <h2>Children’s Privacy</h2>
+    <p>
+      The Service is not intended for individuals under the age of 18. 
+      We do not knowingly collect personal information from children under 18. 
+      If you believe we have inadvertently collected such data, please contact us to remove it.
+    </p>
+
+    <h2>Changes to This Policy</h2>
+    <p>
+      We may update this Privacy Policy at any time. Any changes will be posted on this page 
+      and will become effective upon posting. Your continued use of the Service after changes are posted 
+      constitutes your acceptance of the updated Policy.
+    </p>
+
+    <hr>
+    <p>
+      <strong>Note:</strong> This Privacy Policy is for general informational purposes only and does not constitute legal advice.
+    </p>
+  </main>
+
+  <!-- Gradient Footer -->
+  <footer>
+    <p>&copy; 2025 Missed Call Agent. All rights reserved.</p>
+  </footer>
 </body>
 </html>
