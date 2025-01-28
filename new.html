@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Call-Answering for HVAC, Plumbing and Electric Companies. Never miss a lead again with our automated call handling solution.">
+    <meta name="keywords" content="ai call answering, hvac calls, plumbing calls, electrical service calls, automated call handling">
+    <title>Missed Call Agent | AI Call-Answering for Service Pros</title>
+    
+    <!-- Font Import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1721000272165275');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1721000272165275&ev=PageView&noscript=1"
+    /></noscript>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6VKZQ4WFEC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6VKZQ4WFEC');
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-container img {
+            height: 40px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+            color: white;
+            padding: 160px 0 80px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+
+        .gif-container {
+            max-width: 800px;
+            margin: 40px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+
+        .gif-container img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Sign Up Form */
+        .signup-form {
+            background: #f8fafc;
+        }
+
+        .form-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+        }
+
+        input {
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .cta-button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cta-button:hover {
+            background: #1d4ed8;
+        }
+
+        .submit-text {
+            font-size: 18px;
+        }
+
+        .submit-subtext {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: white;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .step {
+            padding: 30px;
+            border-radius: 10px;
+            background: #f8fafc;
+            text-align: center;
+        }
+
+        /* About Section */
+        .about {
+            background: #f8fafc;
+        }
+
+        .about ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .about li {
+            margin: 15px 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .form-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #spotsLeft {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-content">
+            <div class="logo-container">
+                <img src="assets/logo.svg" alt="Missed Call Agent Logo">
+                <h1>Missed Call Agent</h1>
+            </div>
+            <button class="cta-button" onclick="scrollToForm()">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div data-aos="fade-up">
+                <h2>AI Answers Your Calls & Books Jobs – Automatically.</h2>
+                <p>Built for HVAC, Plumbing and Electric Companies like yours.</p>
+                <p>📞 27% of service calls go unanswered – costing you thousands in lost jobs & revenue.</p>
+                <p><strong>Let AI answer, book, and grow your business while you work.</strong></p>
+                <p style="font-size: 20px; font-weight: bold;">Only $100/mo after Free Trial – Pays for Itself with Just 1 Job</p>
+            </div>
+            <div class="gif-container" onclick="scrollToForm()" data-aos="fade-up">
+                <img src="assets/MCAvideo.gif" alt="Missed Call Agent Demo GIF">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sign Up Section -->
+    <section class="signup-form" id="signup">
+        <div class="container form-container">
+            <div data-aos="fade-right">
+                <h2>Get Early Access – Only $100/Month after 14 Day Free Trial</h2>
+                <p id="spotsLeft" style="color: red;">Only <span id="spots">100</span> Spots Left!</p>
+                
+                <div style="padding: 20px 0; line-height: 2.0;">
+                    <p><strong>✔ AI answers calls instantly</strong> – No more lost leads.</p>
+                    <p><strong>✔ Books appointments automatically</strong> – No back-and-forth with customers.</p>
+                    <p><strong>✔ Works 24/7</strong> – Handles calls even when you're on the job.</p>
+                    <p><strong>✔ Pays for itself</strong> – Just 1 booked job covers the cost.</p>
+                    <p><strong>✔ 100% ROI Guarantee</strong> – If it doesn't pay for itself in 30 days, you don't pay.</p>
+                </div>
+            </div>
+
+            <div data-aos="fade-left">
+                <form id="signupForm" method="POST" action="https://script.google.com/macros/s/AKfycbwfICumV-Q3h2IXQ4V7P1w8RN-daeNiH3r95a3nRGUUL6jNAIsoAf-ZPBt4DjluQl8LxQ/exec" target="hidden_iframe" onsubmit="gtag('event','Form_Submission',{event_category:'Lead',event_label:'Early Access'}); fbq('track','CompleteRegistration'); document.getElementById('timestamp').value = new Date().toISOString(); setTimeout(function() { window.location.href = 'signedup.html'; }, 500); submitted=true;">
+                    <input name="Name" type="text" placeholder="Name*" required>
+                    <input name="Email" type="email" placeholder="Email*" required>
+                    <input name="Business Name" type="text" placeholder="Business Name*" required>
+                    <input type="hidden" id="timestamp" name="Timestamp">
+                    <button type="submit" class="cta-button">
+                        <span class="submit-text">Start Free Trial</span>
+                        <span class="submit-subtext">Cancel anytime · $100/mo after 14 days</span>
+                    </button>
+                </form>
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+                <p id="confirmation-message" class="hidden">Your info is submitted. We'll reach out soon!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step" data-aos="fade-up">
+                    <p><strong>AI Answers Calls Instantly</strong></p>
+                </div>
+                <div class="step" data-aos="fade-up" data-aos-delay="100">
+                    <p><strong>Books Appointments for You</strong></p>
+                </div>
+                <div class="step" data-aos="fade-up" data-aos-delay="200">
+                    <p><strong>Grows Your Business on Autopilot</strong></p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="cta-button" onclick="scrollToForm()">100% ROI Guarantee</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div data-aos="fade-up">
+                <h2>AI Answers. Schedules. Grows Your Business.</h2>
+                <p>Missed Call Agent recovers lost revenue for HVAC, Electricians, and Plumbers.</p>
+                <ul>
+                    <li>📞 <strong>Never Miss a Lead Again</strong> – Every call is answered instantly.</li>
+                    <li>📅 <strong>Appointments Booked for You</strong> – Customers schedule themselves.</li>
+                    <li>💰 <strong>Pays for Itself</strong> – Just 1 booked job covers the cost.</li>
+                </ul>
+                <p><strong>Limited Early Access – Just $100/month. Secure your spot now.</strong></p>
+                <button class="cta-button" onclick="scrollToForm()">Get Early Access</button>
+                <p id="spotsLeft" style="color: red;">Only <span id="spots">100</span> Spots Left!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Trusted by HVAC, Plumbing & Electrical Pros</h2>
+            <p>Join top service pros using AI to grow their businesses.</p>
+            <div style="text-align: center; margin-top: 40px;">
+                <img src="assets/image3.jpg" alt="HVAC Tech Doing Work on a unit" style="max-width: 100%; border-radius: 10px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p><strong>100% ROI Guarantee:</strong> If Missed Call Agent doesn't pay for itself in 30 days, you don't pay.</p>
+            <p>© 2025 Missed Call Agent. All rights reserved.</p>
+            <a href="privacypolicy.html">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToForm() {
+            document.getElementById("signup").scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function updateSpotsLeft() {
+            const startDate = new Date("2025-01-01");
+            const today = new Date();
+            const daysElapsed = Math.floor((today - startDate) / (1000 * 60 * 60 </antArtifact>
