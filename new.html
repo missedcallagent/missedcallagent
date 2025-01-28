@@ -44,12 +44,11 @@
     <style>
         /* New Color Variables */
         :root {
-            /* Map our old CSS variable names to your new color scheme */
-            --primary: #6a11cb;           /* old var(--primary) usage -> now #3498db */
-            --primary-dark: #2ecc71;      /* old var(--primary-dark) usage -> now #2ecc71 */
-            --secondary: #2c3e50;         /* old var(--secondary) -> text color */
-            --accent: #ff6b6b;            /* old var(--accent) -> #ff6b6b */
-            --gray-50: #f4f6f7;           /* background color */
+            --primary: #6a11cb;           
+            --primary-dark: #2ecc71;      
+            --secondary: #2c3e50;         
+            --accent: #ff6b6b;            
+            --gray-50: #f4f6f7;           
             --gray-100: #f1f5f9;
             --gray-200: #e2e8f0;
             --gray-800: #1e293b;
@@ -121,7 +120,6 @@
         .hero {
             padding-top: 8rem;
             padding-bottom: 4rem;
-            /* Use the new gradient here */
             background: var(--gradient-primary);
             color: white;
         }
@@ -268,18 +266,34 @@
             text-align: center;
         }
 
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1280px;
+        /*
+         * Carousel Setup: 
+         * We'll remove the grid display and show one testimonial at a time.
+         */
+        #testimonialCarousel {
+            position: relative;
+            max-width: 800px;
             margin: 2rem auto 0;
+            /* ensures the container won't collapse; 
+               you can also set a min-height if needed */
         }
 
-        .testimonial {
-            padding: 2rem;
+        #testimonialCarousel .testimonial {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: none; /* hide all testimonials by default */
+            opacity: 0;   /* for fade effect */
+            transition: opacity 0.5s ease;
             background: var(--gray-100);
+            padding: 2rem;
             border-radius: 0.5rem;
+        }
+
+        #testimonialCarousel .testimonial.active {
+            display: block;
+            opacity: 1;
         }
 
         /* Footer */
@@ -312,7 +326,6 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         .animate-in {
             animation: fadeIn 0.6s ease-out forwards;
         }
@@ -323,6 +336,9 @@
             .hero { padding-top: 6rem; }
             .features-grid { grid-template-columns: 1fr; }
             .form-container { padding: 1.5rem; }
+            #testimonialCarousel {
+                width: 90%;
+            }
         }
     </style>
 </head>
@@ -477,7 +493,12 @@
     <section class="social-proof">
         <h2 class="mb-8">Trusted by Growing Businesses</h2>
         <p>Join other HVAC, Plumbing, and Electrical Pros using AI to grow their business.</p>
-        <div class="testimonials">
+
+        <!-- 
+          Give this container an ID to handle the carousel logic:
+          We'll show only one .testimonial at a time
+        -->
+        <div class="testimonials" id="testimonialCarousel">
             <div class="testimonial animate-in">
                 <p class="mb-4">"Recovered $4,200 in missed calls in our first month!"</p>
                 <strong>- Garrett Thorne, Five Star HVAC</strong>
@@ -568,6 +589,28 @@
             }
         }
         updateSpotsLeft();
+
+        // ======== Testimonial Carousel Logic ========
+        const testimonials = document.querySelectorAll('#testimonialCarousel .testimonial');
+        let currentIndex = 0;
+        const rotateInterval = 4000; // 4 seconds per testimonial
+
+        // Initialize: show the first testimonial
+        testimonials[currentIndex].classList.add('active');
+
+        function showNextTestimonial() {
+            // Hide current
+            testimonials[currentIndex].classList.remove('active');
+
+            // Move to next, wrap around with modulo
+            currentIndex = (currentIndex + 1) % testimonials.length;
+
+            // Show new
+            testimonials[currentIndex].classList.add('active');
+        }
+
+        // Rotate automatically every 4 seconds
+        setInterval(showNextTestimonial, rotateInterval);
     </script>
 </body>
 </html>
