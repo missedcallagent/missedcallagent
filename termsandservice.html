@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Terms of Service</title>
 
-  <!-- Using the same variable names & minimal style from main HTML -->
+  <!-- Shared Theme & Style -->
   <style>
     :root {
-      --primary: #3498db;
-      --primary-dark: #2ecc71;
+      /* Updated to the requested primary color & gradient */
+      --primary: #6a11cb;
+      --primary-dark: #2ecc71; /* or any secondary accent you'd like */
       --secondary: #2c3e50;
       --accent: #ff6b6b;
       --gray-50: #f4f6f7;
@@ -38,9 +39,15 @@
       background-color: var(--gray-50);
     }
 
-    header, footer {
+    header {
       background: white;
       box-shadow: var(--shadow-sm);
+      padding: 1rem;
+    }
+
+    footer {
+      background: var(--gradient-primary); /* Gradient in the footer */
+      color: #fff;
       padding: 1rem;
     }
 
@@ -58,13 +65,24 @@
       margin-bottom: 1rem;
     }
 
-    .header-title {
-      font-size: 1.5rem;
-      color: var(--primary);
+    /* Header / Nav */
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
       text-decoration: none;
       font-weight: bold;
+      color: var(--primary);
+      font-size: 1.5rem;
     }
-
+    .header-logo img {
+      height: 32px;
+      margin-right: 0.5rem;
+    }
     .nav-link {
       color: var(--secondary);
       text-decoration: none;
@@ -75,21 +93,24 @@
       color: var(--primary);
     }
 
+    /* Footer */
     footer p {
       text-align: center;
-      color: var(--secondary);
-      opacity: 0.9;
+      opacity: 0.95;
     }
   </style>
 </head>
 <body>
-  <!-- Simple Header -->
+  <!-- Header with Logo -->
   <header>
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-      <a href="index.html" class="header-title">Missed Call Agent</a>
+    <div class="container header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="assets/logo.svg" alt="Missed Call Agent Logo">
+        Missed Call Agent
+      </a>
       <nav>
         <a href="index.html" class="nav-link">Home</a>
-        <a href="privacypolicy.html" class="nav-link">Privacy Policy</a>
+        <a href="privacy-policy.html" class="nav-link">Privacy</a>
       </nav>
     </div>
   </header>
@@ -176,7 +197,7 @@
     </p>
   </main>
 
-  <!-- Simple Footer -->
+  <!-- Gradient Footer -->
   <footer>
     <p>&copy; 2025 Missed Call Agent. All rights reserved.</p>
   </footer>
